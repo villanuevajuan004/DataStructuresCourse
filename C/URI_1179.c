@@ -10,6 +10,8 @@
 # GNU General Public License as published by the Free Software Foundation, version 2.
 */
 
+//Problem Link: https://www.urionlinejudge.com.br/judge/en/problems/view/1179
+
 //Standard library to Input and Output mechanisms
 #include <stdio.h>
 
@@ -34,20 +36,20 @@ int main()
 				for(j = 0; j < 5; j++) //Loop to move thought even vector
 					printf("par[%d] = %d\n", j, even[j]); //Print each position of even vector
 
-				counterEven = 0; //Reset the counter 'cos vector must be able to save numbers again
+				counterEven = 0; //Reset the counter because vector must be able to save numbers again
 			}
 		}
 		else //odd
 		{
-			even[counterEven] = n; //Add number to odd vector in index based on counter
-			counterEven++; //Increase the counter of odd numbers added to vector
+			even[counterOdd] = n; //Add number to odd vector in index based on counter
+			counterOdd++; //Increase the counter of odd numbers added to vector
 
-			if(counterEven == 5) //Is odd vector is full?
+			if(counterOdd == 5) //Is odd vector is full?
 			{
 				for(j = 0; j < 5; j++) //Loop to move thought odd vector
-					printf("par[%d] = %d\n", j, even[j]); //Print each position of odd vector
+					printf("impar[%d] = %d\n", j, odd[j]); //Print each position of odd vector
 
-				counterEven = 0; //Reset the counter 'cos vector must be able to save numbers again
+				counterOdd = 0; //Reset the counter because vector must be able to save numbers again
 			}
 		}
 	}
