@@ -10,7 +10,7 @@
 # GNU General Public License as published by the Free Software Foundation, version 2.
 */
 
-//Problem Link: https://www.urionlinejudge.com.br/judge/en/problems/view/1005
+//Problem Link: https://www.urionlinejudge.com.br/judge/en/problems/view/1173
 
 //Standard library to Input and Output mechanisms
 #include <stdio.h>
@@ -18,15 +18,19 @@
 //Main function
 int main()
 {
-	float a, b, x;
+	int a;
+	int n[10];
 
-	scanf("%f", &a);
-	scanf("%f", &b);
+	scanf("%d", &a);
+	n[0] = a;
+	printf("N[0] = %d\n", n[0]);
+	int i;
 
-	x = (a * 3.5) + (b * 7.5);
-	x /= 11;
-
-	printf("MEDIA = %.5f\n", x);
+	for(i = 1; i < 10; i++)
+	{
+		n[i] = n[i - 1] * 2;
+		printf("N[%d] = %d\n", i, n[i]);
+	}
 
 	return 0;
 }

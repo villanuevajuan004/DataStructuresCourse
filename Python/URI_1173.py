@@ -1,4 +1,4 @@
-/*
+'''
 # Solution for a class exercise.
 #
 # Created by Msc. Carlos Andres Sierra on February 2014.
@@ -8,25 +8,17 @@
 #
 # DataStructureCourse is free software: you can redistribute it and/or modify it under the terms of the
 # GNU General Public License as published by the Free Software Foundation, version 2.
-*/
+'''
+#Problem Link: https://www.urionlinejudge.com.br/judge/en/problems/view/1173
 
-//Problem Link: https://www.urionlinejudge.com.br/judge/en/problems/view/1005
 
-//Standard library to Input and Output mechanisms
-#include <stdio.h>
+a = int(raw_input())
+n = [0 for i in range(10) ]
 
-//Main function
-int main()
-{
-	float a, b, x;
+n[0] = a
+print("N[0] = %d" % a)
 
-	scanf("%f", &a);
-	scanf("%f", &b);
 
-	x = (a * 3.5) + (b * 7.5);
-	x /= 11;
-
-	printf("MEDIA = %.5f\n", x);
-
-	return 0;
-}
+for i in range(1,10):
+    n[i] = n[i - 1] * 2
+    print("N[%d] = %d" % (i, n[i]))
