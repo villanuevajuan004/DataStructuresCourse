@@ -17,6 +17,8 @@ odd = [0 for i in range(5)] #create vector for odd numbers
 counterEven = 0 #counter for the amount of even numbers saved in the array
 counterOdd = 0 #counter for the amount of odd numbers saved in the array
 
+print "Severo!"
+
 #Read all 15 numbers
 for i in range(15):
     n = int( raw_input() ) #Save the number from console to n
