@@ -19,36 +19,40 @@
 
 int main()
 {
-	int puntos[4];
+	int points[4]; //Array to save two Cartesian Coordinates
 
-	int i;
+	int i; //Variable to management the array index
 
+	//Read for values: x1 (index 0), y1 (index 1), x2 (index 2), y2 (index 3)
 	for(i = 0; i < 4; i++)
 	{
-		scanf("%d", &puntos[i]);
+		scanf("%d", &puntos[i]); //Save each value inside the array
 	}
 
+
+	//The program must end when all values are equals to zero
 	while(puntos[0] != 0 && puntos[1] != 0 && puntos[2] != 0 && puntos[3] != 0)
 	{
-		if(puntos[0] == puntos[2]) //x es el mismo
+		if(puntos[0] == puntos[2]) //Verify if z1 and x2 are the same
 		{
-			if(puntos[1] == puntos[3]) //y es el mismo
+			if(puntos[1] == puntos[3]) //Verify if y1 and y2 are the same
 			{
-				printf("0\n"); //Esta en la misma posicion
+				printf("0\n"); //Points are the same
 			}
 			else
 			{
-				printf("1\n"); //Esta en la misma fila
+				printf("1\n"); //Points are on the same row
 			}
 		}
 		else
 		{
-			if(puntos[1] == puntos[3]) //y es el mismo
+			if(puntos[1] == puntos[3]) //Verify if y1 and y2 are the same
 			{
-				printf("1\n"); //Esta en la misma columna
+				printf("1\n"); //Points are on the same column
 			}
 			else
 			{
+
 				if( abs(puntos[2] - puntos[0]) == abs(puntos[3] - puntos[1]) ) //Diagonal
 				{
 					printf("1\n");
@@ -60,10 +64,10 @@ int main()
 			}
 		}
 
-
+		//Read again x1, y1, x2, y2
 		for(i = 0; i < 4; i++)
 		{
-			scanf("%d", &puntos[i]);
+			scanf("%d", &puntos[i]); //Save each point inside the array
 		}
 	}
 

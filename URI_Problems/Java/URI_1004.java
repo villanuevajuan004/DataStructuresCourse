@@ -1,7 +1,7 @@
 /*
 # Solution for a class exercise.
 #
-# Created by Msc. Carlos Andres Sierra on February 2014.
+# Created by Msc. Carlos Andres Sierra on February 2017.
 # Copyright (c) 2017  Msc. Carlos Andres Sierra. Corporacion Universitaria Minuto de Dios. All rights reserved.
 #
 # This file is part of DataStructuresCourse.
@@ -18,7 +18,12 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-//Always the name of class must be "Main"
+
+
+/**
+ * Always the name of class must be "Main". 
+ * @author carlosandressierra
+ */
 public class Main {
 
 	/**
