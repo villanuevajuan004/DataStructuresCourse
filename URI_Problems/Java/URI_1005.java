@@ -19,7 +19,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 //Always the name of class must be "Main"
-public class Main {
+public class URI_1005 {
 
 	/**
 	 * Main function on the execution

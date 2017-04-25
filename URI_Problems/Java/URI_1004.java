@@ -24,7 +24,7 @@ import java.io.OutputStreamWriter;
  * Always the name of class must be "Main". 
  * @author carlosandressierra
  */
-public class Main {
+public class URI_1004 {
 
 	/**
 	 * Main function on the execution
