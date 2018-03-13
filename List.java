@@ -91,6 +91,76 @@ public class List {
 		catch(Exception ex) {  ex.printStackTrace(); }
 	}
 	
+	public void quickSort()
+	{
+		if(!isEmpty())
+		{
+			List leftList = new List();
+			List rightList = new List();
+			Node pivot = head;
+			Node temp = head.next;
+			
+			while(temp != null)
+			{
+				if(temp.value < pivot.value)
+					leftList.insertAtEnd(temp.clone());
+				else
+					rightList.insertAtEnd(temp.clone());
+				
+				temp = temp.next;
+			}
+			
+			leftList.quickSort();
+			rightList.quickSort();
+			pivot.next = rightList.head;
+			leftList.insertAtEnd(pivot);
+			head = leftList.head;
+		}
+	}
+	
+	public Node getNode(int index)
+	{
+		if(listSize() < index)
+			return null;
+		else
+		{
+			Node temp = head;
+			for(int i = 0; i < index; i++)
+				temp = temp.next;
+			
+			return temp;
+		}
+	}
+	
+	
+	public Node binarySearch()
+	{
+		int max = listSize() - 1, min = 0;
+		int middle = (max + min) / 2;
+		
+		while()
+		{
+			
+		}
+		
+		return null;
+	}
+	
+	
+	public int listSize()
+	{
+		int counter = 0;
+		Node temp = head;
+		
+		while(temp != null)
+		{
+			counter += 1;
+			temp = temp.next;
+		}
+		
+		return counter;
+	}
+	
 	public static void main(String[] args) throws IOException
 	{
 		List students = new List();
