@@ -1,0 +1,138 @@
+import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class Bubble_Sort {
+
+	static void BubbleSort(int array[]) {
+		for(int i =0; i < array.length -1;i++) {
+			for (int j=0; j < array.length -1;j++) {
+				if (array[j]> array[j+1]) {
+					int temp = array[j];
+					array[j]= array[j+1];
+					array[j+1]= temp;
+				}
+			}
+		}
+	}
+	public static void main(String[]args) throws IOException{
+	//recibo el arreglo separado por comas.
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String line = br.readLine();
+		String[] numeros = line.split(",");
+		int [] array= new int [numeros.length];
+		for (int i=0; i <numeros.length;i++) {
+			array[i] = Integer.parseInt(numeros[i]);
+		}
+		BubbleSort(array);
+		for (int i =0; i< array.length;i++) {
+			System.out.print(array[i]+(" "));
+		}
+	}
+}
+//Aqui empieza el lineal search
+public class Lineal_Search {
+	
+	static int busqueda(int arreglo[], int A)
+	{
+		int indice = -1;
+	
+		for(int i = 0; i<arreglo.length;i++)
+		{
+			if (arreglo[i] == A)
+			{
+				indice=i;
+			}
+			
+		}
+		
+		return indice;
+	}
+	
+	public static void main(String[]args) throws IOException {
+		// recibo por consola mi arreglo separado por comas 
+		   BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		   String line = br.readLine();
+		   String[] numeros = line.split(",");
+		 // Creo otro arreglo el cual servira para pasar mi arreglo que es una cadena a ser Entero
+		   int[]arreglo=new int[numeros.length];
+		   
+		   for(int i=0; i <numeros.length; i++)
+			   arreglo[i] = Integer.parseInt(numeros[i]);
+		   
+		   System.out.println("Numero a buscar");
+		   String k = br.readLine();
+		   int L = Integer.parseInt(k);
+		   
+		   System.out.println("se encuentra en el indice "+busqueda(arreglo,L));
+		}
+}
+//Aqui empieza el Merge sort
+public class Merge_Sort {
+
+	public int[] MergeSort (int array[]) {
+		if (array.length>1) {
+			//Se divide en 2 el arreglo
+			int RightPart = array.length/2;
+			int leftPart = array.length-RightPart;
+			int [] Array1 = new int[leftPart];
+			int [] Array2 = new int [RightPart];
+			//Se guardaran los numeros de la parte izquierda
+			for (int i=0; i<leftPart;i++) {
+				Array1[i]= array[i];
+			}
+			//Se guardaran los numeros de la parte derecha
+			for (int i=0; i<leftPart+RightPart;i++) {
+				Array2[i-leftPart]= array[i];
+			}
+			//Se ordenaran los arreglos
+			Array1=MergeSort(Array1);
+			Array2=MergeSort(Array2);
+			
+			int j=0;
+			int k=0;
+			int l=0;
+			
+			while(Array1.length!= k && Array2.length !=l) {
+				if(Array1[k]< Array2[l]) {
+					array[j]=Array1[k];
+					j++;
+					k++;
+				}
+					else {
+						array[j]=Array2[l];
+						j++;
+						l++;
+						
+				}
+			}
+			while (Array1.length!=k) {
+				array[j]=Array1[k];
+				j++;
+				k++;
+			}
+			while (Array2.length!=k) {
+				array[j]=Array2[k];
+				j++;
+				l++;
+			}
+		}
+		return array;
+	}
+	public static void main(String[]args) throws IOException{
+		//Recibo el arreglo separado por comas
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String line = br.readLine();
+		String[] numeros = line.split(",");
+		int [] array= new int [numeros.length];
+		for (int i=0; i <numeros.length;i++) {
+			array[i] = Integer.parseInt(numeros[i]);
+		}
+		Merge_Sort ordenador= new Merge_Sort();
+		array= ordenador.MergeSort(array);
+		for(int i=0; i < array.length;i++) {
+			System.out.print(array[i]+(" "));
+		}
+	}
+
+}
